@@ -1,28 +1,15 @@
-﻿int[] array = {4, 9, 3, 7, 2, 9, 2, 5};
-int[] array2 = {4, 2, 3, 2, 2, 9, 1, 5};
+﻿int[] array = {4, 9, 3};
 
-for (int i = 0; i < array.Length; i++)
-    Console.Write($"{array2[i]}");
+int max = Max(array[0], array[1], array[2]); // запуск функции
 
-Sort(array2);
-Console.WriteLine();
+Console.WriteLine($"{max}");
 
-for (int i = 0; i < array.Length; i++)
-    Console.Write($"{array2[i]}");
-
-void Sort(int[] _array)
+int Max(int _a, int _b, int _c)
 {
-    for (int j = 0; j < _array.Length - 1; j++)
-    {
-        for (int i = 0; i < _array.Length - 1 ; i++)
-        {
-            if (_array[i] > _array[i+1])
-            {
-                int temp = _array[i];
-                _array[i] = _array[i+1];
-                _array[i+1] = temp;
+    int max = _a;
+    if (_b > max) max = _b;
+    if (_c > max) max = _c;
+    return max;
 
-            }
-        }
-    }
 }
+
