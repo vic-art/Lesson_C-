@@ -1,28 +1,55 @@
-﻿int[] array = {4, 9, 3, 7, 2, 9, 2, 5};
-int[] array2 = {4, 2, 3, 2, 2, 9, 1, 5};
+﻿// for (int i = 0; i < 30; i++)
 
-for (int i = 0; i < array.Length; i++)
-    Console.Write($"{array2[i]}");
+// // генерируем случайное двузначное число до 50
+// {
+//     int a = new Random().Next() % 40 + 10; // return non-negative random number   
+//     Console.Write($"{a} ");
+// }
+// // [0,39] -> [10, 49]
 
-Sort(array2);
-Console.WriteLine();
+// // для ограничения рандома будем использовать отстаток от деления 
+// // остаток от деления на любое число это все значения от 0 до этого числа
+// // остаток от деления на 5: 0,1,2,3,4
 
-for (int i = 0; i < array.Length; i++)
-    Console.Write($"{array2[i]}");
+// // генерируем случайное двузначное число до 50
 
-void Sort(int[] _array)
+
+// // все четные значения до 20 включительно
+// int a = new Random().Next() % 11 * 2;
+// // [0,10] -> [0,20]
+
+// // все нечетные значения до 20 включительно
+// int a = new Random().Next() % 11 * 2 + 1;
+// // [0,10] -> [0,21]
+
+// // можно задавать левую и правую границы
+// int a = new Random().Next(5,20);
+
+/* Напишите программу, которая выводит случайное число из отрезка [10,99] и показывает 
+наибольшую цифру числа
+78 -> 8 */
+
+int rand = new Random().Next(10,100);
+
+Console.WriteLine(rand);
+
+int a = rand / 10;
+int b = rand % 10;
+
+if (a > b)
 {
-    for (int j = 0; j < _array.Length - 1; j++)
-    {
-        for (int i = 0; i < _array.Length - 1 ; i++)
-        {
-            if (_array[i] > _array[i+1])
-            {
-                int temp = _array[i];
-                _array[i] = _array[i+1];
-                _array[i+1] = temp;
-
-            }
-        }
-    }
+    Console.Write($"Наибольшая цифра {a}");
 }
+else
+{
+    Console.Write($"Наибольшая цифра {b}");
+}
+
+/* Напишите программу, которая выводит случайное трехзначное число  и удаляет вторую цифру из 
+этого числа 
+456 -> 46 */
+int rand  =  new Random().Next(100, 1000);
+
+Console.WriteLine(rand);
+
+Console.Write($"{rand/100*10 + rand % 10}");
